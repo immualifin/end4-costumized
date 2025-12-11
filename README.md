@@ -8,13 +8,9 @@ Customized Quickshell configuration based on [end-4/dots-hyprland](https://githu
 
 | Area | Components |
 |------|------------|
-| Left | LeftSidebarButton, ActiveWindow (hidden) |
 | Left-Center | CPU indicator, Media control (positioned separately) |
 | Center | Clock/Date, Workspaces |
 | Right | Battery, Volume/Mic, Network, Bluetooth, SysTray |
-
-#### Active Window
-- Disabled (`visible: false`) - the active window title is no longer shown
 
 #### Resource Indicators (Resources.qml)
 - **Memory (RAM)**: Hidden
@@ -55,10 +51,6 @@ Customized Quickshell configuration based on [end-4/dots-hyprland](https://githu
 | Media playing (not hovered) | CPU + Music icon only |
 | Media playing (hovered) | CPU + Music icon + Title/Artist (slides out) |
 | No media playing | CPU indicator only |
-
-## Screenshot
-
-*Add your bar screenshot here*
 
 ## Installation
 
