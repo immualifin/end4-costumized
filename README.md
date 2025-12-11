@@ -4,23 +4,57 @@ Customized Quickshell configuration based on [end-4/dots-hyprland](https://githu
 
 ## Changes from Default Configuration
 
-### Bar (BarContent.qml)
+### Bar Layout (BarContent.qml)
 
-- **Active Window** - Disabled (`visible: false`)
-- **Resource Indicators** - Only shows CPU (RAM and Swap hidden)
-- **Media Control** - Dynamic, only appears when media is playing
-  - Title and artist hidden by default
-  - Appears with slide animation when hovering over the music icon
-- **Battery Indicator** - Moved to right indicator group (alongside volume, network, bluetooth)
-- **Center Layout** - Resources/Media positioned separately from Clock and Workspaces to maintain bar symmetry
+| Area | Components |
+|------|------------|
+| Left | LeftSidebarButton, ActiveWindow (hidden) |
+| Left-Center | CPU indicator, Media control (positioned separately) |
+| Center | Clock/Date, Workspaces |
+| Right | Battery, Volume/Mic, Network, Bluetooth, SysTray |
+
+#### Active Window
+- Disabled (`visible: false`) - the active window title is no longer shown
+
+#### Resource Indicators (Resources.qml)
+- **Memory (RAM)**: Hidden
+- **Swap**: Hidden  
+- **CPU**: Always visible (only resource indicator shown)
+
+#### Media Control (Media.qml)
+- Only appears when media is playing
+- **Hover behavior**: Title and artist are hidden by default, slide out from the icon when hovering
+- **Dynamic width**: Expands on hover with smooth animation using `Appearance.animation.elementMove`
+- **No empty space**: When not hovering, only the music icon is shown
+
+#### Battery Indicator
+- Moved from center group to right indicator group (alongside volume, network, bluetooth icons)
+- Scaled to 0.8 for consistent sizing with other icons
+
+#### Layout Symmetry
+- Resources/Media group positioned separately from Clock and Workspaces
+- Ensures the center section (Clock + Workspaces) remains truly centered
+- Time/Date width auto-fits to content instead of fixed width
+
+#### Component Order in Center
+- **Before**: CPU → Workspaces → Clock
+- **After**: CPU → Clock → Workspaces
 
 ### Panel Families (shell.qml)
 
-- **Waffle Panel** - Added `iiOverview` so Task View works in waffle panel family
+- **Waffle Panel**: Added `iiOverview` to enabled panels list, so Task View button works correctly in waffle panel family
 
 ### Applications (Config.qml)
 
-- **Task Manager** - Uses `plasma-systemmonitor`
+- **Task Manager**: Uses `plasma-systemmonitor --page-name Processes`
+
+## Behavior Summary
+
+| Condition | Behavior |
+|-----------|----------|
+| Media playing (not hovered) | CPU + Music icon only |
+| Media playing (hovered) | CPU + Music icon + Title/Artist (slides out) |
+| No media playing | CPU indicator only |
 
 ## Screenshot
 
@@ -47,6 +81,15 @@ git clone https://github.com/immualifin/end4-costumized.git ~/.config/quickshell
 - [Quickshell](https://github.com/quickshell-mirror/quickshell)
 - [Hyprland](https://hyprland.org/)
 - `plasma-systemmonitor` (for Task Manager)
+
+## Files Modified
+
+| File | Changes |
+|------|---------|
+| `modules/ii/bar/BarContent.qml` | Layout restructure, battery moved, media visibility |
+| `modules/ii/bar/Resources.qml` | Hide RAM/Swap, show CPU only |
+| `modules/ii/bar/Media.qml` | Hover-to-reveal with slide animation |
+| `shell.qml` | Added iiOverview to waffle panel family |
 
 ## Credits
 
