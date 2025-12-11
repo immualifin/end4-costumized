@@ -1,35 +1,35 @@
 # End-4 Quickshell Customized
 
-Konfigurasi Quickshell yang telah dikustomisasi berdasarkan [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland).
+Customized Quickshell configuration based on [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland).
 
-## Perubahan dari Konfigurasi Default
+## Changes from Default Configuration
 
 ### Bar (BarContent.qml)
 
-- **Active Window** - Dinonaktifkan (`visible: false`)
-- **Resource Indicators** - Hanya menampilkan CPU (RAM dan Swap disembunyikan)
-- **Media Control** - Dinamis, hanya muncul saat ada media yang diputar
-  - Judul dan artis tersembunyi secara default
-  - Muncul dengan animasi slide saat icon musik di-hover
-- **Battery Indicator** - Dipindah ke grup indikator kanan (bersama volume, network, bluetooth)
-- **Layout Tengah** - Resources/Media diposisikan terpisah dari Clock dan Workspaces untuk menjaga simetri bar
+- **Active Window** - Disabled (`visible: false`)
+- **Resource Indicators** - Only shows CPU (RAM and Swap hidden)
+- **Media Control** - Dynamic, only appears when media is playing
+  - Title and artist hidden by default
+  - Appears with slide animation when hovering over the music icon
+- **Battery Indicator** - Moved to right indicator group (alongside volume, network, bluetooth)
+- **Center Layout** - Resources/Media positioned separately from Clock and Workspaces to maintain bar symmetry
 
 ### Panel Families (shell.qml)
 
-- **Waffle Panel** - Ditambahkan `iiOverview` agar Task View berfungsi di panel family waffle
+- **Waffle Panel** - Added `iiOverview` so Task View works in waffle panel family
 
-### Aplikasi (Config.qml)
+### Applications (Config.qml)
 
-- **Task Manager** - Menggunakan `plasma-systemmonitor`
+- **Task Manager** - Uses `plasma-systemmonitor`
 
 ## Screenshot
 
-*Tambahkan screenshot bar Anda di sini*
+*Add your bar screenshot here*
 
-## Instalasi
+## Installation
 
-1. Backup konfigurasi Quickshell Anda yang ada
-2. Clone repository ini ke `~/.config/quickshell/ii`
+1. Backup your existing Quickshell configuration
+2. Clone this repository to `~/.config/quickshell/ii`
 3. Reload Quickshell
 
 ```bash
@@ -37,17 +37,17 @@ Konfigurasi Quickshell yang telah dikustomisasi berdasarkan [end-4/dots-hyprland
 mv ~/.config/quickshell/ii ~/.config/quickshell/ii.backup
 
 # Clone
-git clone git@github.com:immualifin/end4-costumized.git ~/.config/quickshell/ii
+git clone https://github.com/immualifin/end4-costumized.git ~/.config/quickshell/ii
 
-# Reload Quickshell (atau restart session)
+# Reload Quickshell (or restart session)
 ```
 
-## Dependensi
+## Dependencies
 
 - [Quickshell](https://github.com/quickshell-mirror/quickshell)
 - [Hyprland](https://hyprland.org/)
-- `plasma-systemmonitor` (untuk Task Manager)
+- `plasma-systemmonitor` (for Task Manager)
 
 ## Credits
 
-- Konfigurasi asli: [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
+- Original configuration: [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
